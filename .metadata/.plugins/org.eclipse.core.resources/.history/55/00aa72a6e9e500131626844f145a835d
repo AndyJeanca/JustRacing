@@ -1,0 +1,18 @@
+package com.example.justracing;
+
+import java.util.ArrayList;
+
+import com.example.GeneticAlgorithm.Weapon;
+import com.example.ObjectOnTrack.Enemy;
+
+public class Intersection {
+	private boolean status;
+	private ArrayList<Enemy> enemies;
+	private Weapon weapon;
+	private BillBoard billBoard;
+	
+	public Intersection () {
+		status = false;
+	}
+
+}

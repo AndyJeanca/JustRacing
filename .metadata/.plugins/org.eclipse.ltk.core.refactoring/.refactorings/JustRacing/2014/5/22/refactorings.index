@@ -1,0 +1,13 @@
+1401170233031	Delete element
+1401170606916	Delete element
+1401170671001	Delete element
+1401170739265	Delete element
+1401223534422	Delete element
+1401226216912	Encapsulate field 'MAXNUMBER'
+1401226232182	Encapsulate field 'MULTIPLINUMBER'
+1401226238938	Encapsulate field 'ADDNUMBER'
+1401226247301	Encapsulate field 'seed'
+1401226621364	Rename local variable 'result'
+1401226984979	Rename local variable 'numberOfEnemies'
+1401233045957	Rename field 'MULTIPLINUMBER'
+1401233769104	Encapsulate field 'status'

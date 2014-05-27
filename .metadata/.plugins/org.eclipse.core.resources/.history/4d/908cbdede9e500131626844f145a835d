@@ -1,0 +1,38 @@
+package com.example.justracing;
+
+import java.util.ArrayList;
+
+import com.example.GeneticAlgorithm.Weapon;
+import com.example.ObjectOnTrack.Enemy;
+
+public class Intersection {
+	private long id;
+	private boolean status;
+	private ArrayList<Enemy> enemies;
+	private Weapon weapon;
+	private BillBoard billBoard;
+	
+	public Intersection (int pId) {
+		id = pId;
+		status = false;
+		enemies = generateEnemies();
+		weapon = new Weapon();
+		billBoard = generatBillBoard();
+	}
+	
+	public Enemy generateEnemies() {
+		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+		Lehmer _NumberOfEnemies = new Lehmer();
+		_NumberOfEnemies.setMAXNUMBER(4);
+		long randomAmountOfEnemies = _NumberOfEnemies.doLhemer(id);
+		for (int amountOfEnemies = 0; amountOfEnemies < randomAmountOfEnemies; amountOfEnemies++) {
+			_NumberOfEnemies.setMAXNUMBER(5);
+			int x = (int) _NumberOfEnemies.doLhemer(id);
+			_NumberOfEnemies.setMAXNUMBER(100);
+			int y = (int) _NumberOfEnemies.doLhemer(id);
+			Enemy newEnemy = new Enemy(x, y);
+			enemies.add(newEnemy);
+		}
+	}
+
+}

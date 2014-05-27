@@ -1,0 +1,15 @@
+package com.example.justracing;
+
+import com.example.GeneticAlgorithm.Weapon;
+
+public class Intersection {
+	private int status;
+	private ArrayList<Enemy> enemies;
+	private Weapon weapon;
+	private BillBoard billBoard;
+	
+	public Intersection () {
+		status = false;
+	}
+
+}

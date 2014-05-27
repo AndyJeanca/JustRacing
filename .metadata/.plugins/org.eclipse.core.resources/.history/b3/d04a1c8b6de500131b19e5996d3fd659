@@ -1,0 +1,28 @@
+package com.example.justracing;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import android.media.Image;
+
+public class BillBoard {
+	private int score;
+	private int color;
+	private Image advertisingImage;
+	private String intersectionName;
+	private int intersectionNumber;
+	
+	public BillBoard (int pScore, int pColor, String pIntersectionName, int pIntersectionNumber) {
+		score = pScore;
+		color = pColor;
+		advertisingImage = selectImage();
+		intersectionName = pIntersectionName;
+		intersectionNumber = pIntersectionNumber;
+	}
+	
+	public Image selectImage () {
+		ArrayList<Image> availableImages = new ArrayList();
+		int randomPosition = (int) (Math.random()*availableImages.size() + 0);
+		return availableImages[randomPosition];
+	}
+}

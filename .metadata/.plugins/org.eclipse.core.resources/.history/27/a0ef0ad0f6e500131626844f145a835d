@@ -1,0 +1,6 @@
+package com.example.justracing;
+
+import java.util.HashMap;
+
+public class Graph {
+}
