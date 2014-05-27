@@ -1,0 +1,31 @@
+package com.example.GeneticAlgorithm;
+
+import android.graphics.Color;
+
+public class Weapon {	
+	private int tracksThatCover;
+	private Color color;
+	private int amountOfPixels;
+	private int amountOfPoints;
+	
+	//Chromosomes 
+	WeaponADN ADN; 
+	
+	public Weapon(){
+		ADN = new WeaponADN();
+		
+		//When it create a new weapon, it has random traits 
+		byte tracksThatCoverChromosome = (byte)((Math.random() * 254)-127);
+		ADN.setTracksThatCover(tracksThatCoverChromosome);
+		
+		byte colorChromosome = (byte)((Math.random() * 254)-127);
+		ADN.setColor(colorChromosome);
+		
+		byte amountOfPizelsChromosome = (byte)((Math.random() * 254)-127);
+		
+		byte amountOfPointsChromosome = (byte)((Math.random() * 254)-127);
+		
+	}
+	
+
+}

@@ -1,0 +1,26 @@
+package com.example.GeneticAlgorithm;
+
+import java.util.ArrayList;
+
+public class Armory {
+	private ArrayList<Weapon> weapons;
+	private static int  MAX_POPULATION_SIZE;
+	public Armory(){
+		this.weapons = new ArrayList<Weapon>();
+		MAX_POPULATION_SIZE = 20;
+	}
+	public void createPopulation(){
+		for(int populationSize = 0; populationSize<MAX_POPULATION_SIZE; populationSize++){
+			Weapon newWeapon = new Weapon();
+			this.weapons.add(newWeapon);
+		}
+	}
+	public Weapon adaptabilityFunction(Weapon weaponToCompare){
+		Weapon fittestWeapon = new Weapon();
+		fittestWeapon = fittestWeapon.comparteTo(weaponToCompare);
+		for(int populationSize = 0; populationSize<MAX_POPULATION_SIZE; populationSize++){
+		
+		}
+		
+	}
+}

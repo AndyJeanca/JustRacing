@@ -1,0 +1,82 @@
+package com.example.GeneticAlgorithm;
+
+//Weapon is the individual of the population it have three chromosomes 
+/*
+ *TRACKS TO COVER 
+ * from		 to 	tracksAmount 		id
+ * 0		85		1					1
+ * 85		170		2					2
+ * 170		256		3					3
+ * 
+ * COLORS
+ * from		 to 	color 				
+ * 0		80		red						
+ * 85		160		green				
+ * 170		240 	blue				
+ * 240		256		random color
+ * 
+ * AMOUNTS OF POINTS
+ * 
+ * from		 to 	amount Of Points 
+ * 0		51		1
+ * 51		102		2
+ * 102		153		3
+ * 153		204		4
+ * 204		256		5
+ * 
+ * 
+ * 
+ */
+public class Weapon {
+	
+	//Chromosomes 
+	private byte tracksThatCoverChromosome;
+	private byte color;
+	private byte amountOfPoints;
+	private byte amountOfPixels;
+	
+	//Values 
+	private int tracksThat;
+	public Weapon(){
+		this.tracksThatCoverChromosome = (byte)0;
+		this.color = (byte)0;
+		this.amountOfPoints = (byte)0;
+		this.amountOfPixels = (byte)0;
+	}
+	//Getters and setters
+	public byte getAmountOfPoints() {
+		return amountOfPoints;
+	}
+	public byte getColor() {
+		return color;
+	}
+	public byte getTracksThatCover() {
+		return tracksThatCoverChromosome;
+	}
+	public void setAmountOfPoints(byte amountOfPoints) {
+		this.amountOfPoints = amountOfPoints;
+	}
+	public void setColor(byte color) {
+		this.color = color;
+	}
+	public void setTracksThatCover(byte tracksThatCover) {
+		this.tracksThatCoverChromosome = tracksThatCover;
+	}
+	//This function is made to compare to weapons and return the weapon 
+	//that cover more tracks
+	public WeaponADN compareTo(WeaponADN weaponToCompare){
+		
+		int thisWeaponTracksThatCover = this.getTracksThatCover();
+		int weaponToCompareTracksThatCover = weaponToCompare.getTracksThatCover();
+		
+		if(thisWeaponTracksThatCover>weaponToCompareTracksThatCover){
+			return this;
+		}
+		else{
+			
+			return weaponToCompare;
+		}
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.example.GeneticAlgorithm;
+//This individual cl
+public class Individual {
+	byte tracksThatCover;
+	byte color;
+	byte amountOfPoints;
+	
+	public Individual(){
+		
+	}
+	
+
+}

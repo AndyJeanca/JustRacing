@@ -1,0 +1,106 @@
+package com.example.GeneticAlgorithm;
+
+import java.util.ArrayList;
+
+public class Armory {
+	private ArrayList<WeaponADN> weapons;
+	private int  MAX_POPULATION_SIZE;
+    
+	public Armory(){
+		this.weapons = new ArrayList<WeaponADN>();
+		this.MAX_POPULATION_SIZE = 20;
+		this.createPopulation();
+	}
+	
+	//This function create the initial population. All the individuals will have all the traits in 0
+	public void createPopulation(){
+		for(int populationSize = 0; populationSize<MAX_POPULATION_SIZE; populationSize++){
+			WeaponADN newWeapon = new WeaponADN();
+			this.weapons.add(newWeapon);
+		}
+	}
+	
+	/*This is the adaptability function it compare all the individuals on the population to see who is the fittest in this case 
+	*who cover more tracks when fire 
+	*/
+	
+	public WeaponADN adaptabilityFunction(WeaponADN weaponToCompare){
+		WeaponADN fittestWeapon = new WeaponADN();
+		fittestWeapon = fittestWeapon.compareTo(weaponToCompare);
+		
+		for(int populationSize = 0; populationSize<MAX_POPULATION_SIZE; populationSize++){
+			WeaponADN actualWeapon = weapons.get(populationSize);
+			fittestWeapon = fittestWeapon.compareTo(actualWeapon);
+		
+		}
+		return fittestWeapon;
+		
+	}
+	
+	//this function takes two weapons and cruze the to create a child Weapon with traits of both parents.
+	public WeaponADN cruzeWeapon (WeaponADN parent1, WeaponADN parent2){
+		//Parents Traits
+		byte parent1TrackReach = parent1.getTracksThatCover();
+		byte parent1Color = parent1.getColor();
+		byte parent1Points = parent1.getAmountOfPoints();
+		
+		byte parent2TrackReach = parent2.getTracksThatCover();
+		byte parent2Color = parent2.getColor();
+		byte parent2Points = parent2.getAmountOfPoints();
+		
+
+		WeaponADN childWeapon = new WeaponADN();
+		
+		byte childTrackReachChromosome = this.cruzeChromosome(parent1TrackReach, parent2TrackReach);
+		childWeapon.setTracksThatCover(childTrackReachChromosome);
+		
+		byte childColor = this.cruzeChromosome(parent1Color, parent2Color);
+		childWeapon.setColor(childColor);
+		
+		byte childPoints = this.cruzeChromosome(parent1Points, parent2Points);
+		childWeapon.setAmountOfPoints(childPoints);
+
+		return childWeapon;
+	}
+	
+	//Cruze chromosomes take two individals and cruze all their chromosomes.
+	public byte cruzeChromosome (byte parent1Chromosome, byte parent2Chromosome){
+		 byte parent1Half;
+	     byte parent2Half;
+	     parent1Half = (byte)(parent1Chromosome<<4);
+	     parent2Half = (byte)(parent2Chromosome>>4);
+	     byte childChromosome = (byte)(parent1Half | parent2Half);
+	     //Mutation 
+
+	     int mutationChance = (int)(Math.random() * 101);
+	     if (mutationChance<10){
+	    	 //Mutation auxiliar = 0001 0000 and it will help to change the 4th bit making an XOR with the child chromosome
+	    	 byte mutationAuxiliar = (byte)(16);
+	    	 childChromosome = (byte)(childChromosome ^ mutationAuxiliar);
+	    	 
+	    	 
+	     }
+	     return childChromosome;
+	        
+	}
+	
+	//PopulationCycle recive a new individual, then it take the fittest match and cruze them. It return the offspring and then it eliminate some random 
+	//individual from the population.
+	public WeaponADN populationCycle(WeaponADN newWeapon){
+		
+		//Get the fittest by the adaptabilityFormula
+		WeaponADN fittestWeapon = this.adaptabilityFunction(newWeapon);
+		
+		//cruzeWeapon
+		WeaponADN childWeapon = cruzeWeapon(newWeapon, fittestWeapon);
+		
+		//Randomly eliminate one weapon and add the new childWeapon to the population 
+
+	     int weaponToEliminate = (int)(Math.random() * 21);
+	     this.weapons.remove(weaponToEliminate);
+	     this.weapons.add(childWeapon);
+	     
+	     return childWeapon;
+		
+	}
+}
