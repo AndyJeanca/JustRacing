@@ -26,14 +26,14 @@ public class Graph {
 		level = pLevel;
 	}
 	
-	public long getStartSeed() {
+	public long generateInitialSeed() {
 		return startSeed;
 	}
 	
 	public void initializeGraph(long pActualSeed) {
 		level++;
 		int posInHash = level-1;
-		nodes.put(posInHash, pActualSeed);
+		nodes.put(posInHash, pSeed);
 		if (verifyIfSuggestRoad(level)){
 			suggestRoad(pActualSeed);
 		}
@@ -45,14 +45,9 @@ public class Graph {
 		seeds.add(pActualSeed);
 		
 		long randomLevel = randomClass.doLhemer(pActualSeed) + 1;
-		long randomSeed = nodes.get((int) randomLevel);
+		long seedRandom = nodes.get((int) randomLevel);
 		level = 0;
-		seeds.add(randomSeed);
-		
-		startSeed = randomSeed;
-		
-		randomClass.setMaxNumber(2^60);
-		
+		seeds.add(seedRandom);
 		return seeds;
 	}
 	

@@ -20,3 +20,4 @@
 1401259015417	Rename field 'firstSeed'
 1401259094025	Rename method 'getMAXNUMBER'
 1401259104918	Rename method 'setMAXNUMBER'
+1401299367163	Rename local variable 'seedRandom'

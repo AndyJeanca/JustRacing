@@ -26,14 +26,14 @@ public class Graph {
 		level = pLevel;
 	}
 	
-	public long getStartSeed() {
+	public long generateInitialSeed() {
 		return startSeed;
 	}
 	
 	public void initializeGraph(long pActualSeed) {
 		level++;
 		int posInHash = level-1;
-		nodes.put(posInHash, pActualSeed);
+		nodes.put(posInHash, pSeed);
 		if (verifyIfSuggestRoad(level)){
 			suggestRoad(pActualSeed);
 		}
