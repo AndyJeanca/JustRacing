@@ -1,0 +1,10 @@
+package com.example.justracing;
+
+import java.util.Hashtable;
+
+
+@SuppressWarnings("rawtypes")
+public class Graph {
+	private int key;
+	private Hashtable<String, Hashtable> node = new Hashtable<String, Hashtable>();
+}

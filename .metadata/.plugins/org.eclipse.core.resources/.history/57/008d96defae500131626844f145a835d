@@ -1,0 +1,9 @@
+package com.example.justracing;
+
+import java.util.Hashtable;
+
+
+public class Graph {
+	private int key;
+	private Hashtable<long, V> node = new Hashta 
+}

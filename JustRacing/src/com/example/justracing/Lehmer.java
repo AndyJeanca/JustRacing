@@ -2,50 +2,42 @@ package com.example.justracing;
 
 public class Lehmer {
 	// X=(ax + c)%m
-	private static long MAXNUMBER; 			// m
-	private static long MULTIPLYNUMBER; 	// a
-	private static long ADDNUMBER;			// C
-	private static long seed; 				// x
+	private long MAXNUMBER; 				// m
+	private final long MULTIPLYNUMBER; 		// a
+	private final long ADDNUMBER;			// C
+	private long seed; 						// x
 	
 	public Lehmer () {
-		setMAXNUMBER(2^60);
-		setMULTIPLYNUMBER(2);
-		setADDNUMBER(2);
+		setMaxNumber(2^60);
+		MULTIPLYNUMBER = 600;
+		ADDNUMBER = 600;
 		setSeed(0);
 	}
 
-	public static long getMAXNUMBER() {
+	public long getMaxNumber() {
 		return MAXNUMBER;
 	}
 
-	public static void setMAXNUMBER(long mAXNUMBER) {
+	public void setMaxNumber(long mAXNUMBER) {
 		MAXNUMBER = mAXNUMBER;
 	}
 
-	public static long getMULTIPLYNUMBER() {
+	public final long getMULTIPLYNUMBER() {
 		return MULTIPLYNUMBER;
 	}
 
-	public static void setMULTIPLYNUMBER(long mULTIPLINUMBER) {
-		MULTIPLYNUMBER = mULTIPLINUMBER;
-	}
 
-	public static long getADDNUMBER() {
+	public final long getADDNUMBER() {
 		return ADDNUMBER;
 	}
 
-	public static void setADDNUMBER(long aDDNUMBER) {
-		ADDNUMBER = aDDNUMBER;
-	}
-
-	public static long getSeed() {
+	public long getSeed() {
 		return seed;
 	}
 
-	public static void setSeed(long seed) {
-		Lehmer.seed = seed;
+	public void setSeed(long pSeed) {
+		seed = pSeed;
 	}
-	
 	
 	public long doLhemer (long pSeed) {
 		setSeed(pSeed);

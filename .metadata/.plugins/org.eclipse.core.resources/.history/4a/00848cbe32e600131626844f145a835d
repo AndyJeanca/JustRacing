@@ -1,0 +1,61 @@
+package com.example.justracing;
+
+import java.util.Hashtable;
+
+
+@SuppressWarnings("rawtypes")
+public class Graph {
+	// private long key;
+	private Hashtable<Long, Hashtable> nodes;
+	private int level;
+	private long startSeed;
+	
+	
+	public Graph () {
+		nodes = new Hashtable<Long, Hashtable>();
+		level = 0;
+		startSeed = 897987;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int pLevel) {
+		level = pLevel;
+	}
+	
+	public void initializeGraph(int pInitialSeed) {
+		Lehmer initialNode = new Lehmer();
+		long initialRandomId = initialNode.doLhemer(startSeed);
+		level++;
+		ActualTrackSector initialSector = new ActualTrackSector(initialRandomId);
+		
+		initialNode.setMaxNumber(3);
+		long amountOfRoads = initialNode.doLhemer(initialRandomId);
+		amountOfRoads += 1;				// amount of roads to creat
+		
+		initialNode.setMaxNumber(2^60);
+		for (int amountOfNodes = 0; amountOfNodes < amountOfRoads ; amountOfNodes++) {
+			long newRandomId = initialNode.doLhemer(initialRandomId);
+			ActualTrackSector newSector = new ActualTrackSector(newRandomId);
+			// here we will change the seed
+			initialNode.setSeed(newRandomId);
+		}
+		level++;
+	}
+	
+	public boolean verifyIfSuggestRoad(int pLevel) {
+		if ((pLevel % 4) == 0)
+			return true;
+		else
+			return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+}

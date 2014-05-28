@@ -1,0 +1,21 @@
+package com.example.justracing;
+
+import java.util.Hashtable;
+
+
+@SuppressWarnings("rawtypes")
+public class Graph {
+	private long key;
+	private Hashtable<Long, Intersection> nodes = new Hashtable();
+	
+	public Graph () {
+		
+	}
+	
+	public void initializeGraph(int pInitialSeed) {
+		Lehmer initialSeed = new Lehmer();
+		long randomKey = initialSeed.doLhemer(pInitialSeed);
+		Intersection newIntersection = new Intersection (randomKey);
+		nodes.put(randomKey, newIntersection);
+	}
+}

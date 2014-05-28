@@ -1,0 +1,59 @@
+package com.example.justracing;
+
+public class Lehmer {
+	// X=(ax + c)%m
+	private long MAXNUMBER; 			// m
+	private final long MULTIPLYNUMBER; 	// a
+	private final long ADDNUMBER;			// C
+	private long seed; 				// x
+	
+	public Lehmer () {
+		setMAXNUMBER(2^60);
+		setMULTIPLYNUMBER(2);
+		setADDNUMBER(2);
+		setSeed(0);
+	}
+
+	public long getMAXNUMBER() {
+		return MAXNUMBER;
+	}
+
+	public void setMAXNUMBER(long mAXNUMBER) {
+		MAXNUMBER = mAXNUMBER;
+	}
+
+	public final long getMULTIPLYNUMBER() {
+		return MULTIPLYNUMBER;
+	}
+
+	public final void setMULTIPLYNUMBER(long mULTIPLINUMBER) {
+		MULTIPLYNUMBER = mULTIPLINUMBER;
+	}
+
+	public final long getADDNUMBER() {
+		return ADDNUMBER;
+	}
+
+	public static void setADDNUMBER(long aDDNUMBER) {
+		ADDNUMBER = aDDNUMBER;
+	}
+
+	public long getSeed() {
+		return seed;
+	}
+
+	public void setSeed(long pSeed) {
+		seed = pSeed;
+	}
+	
+	
+	public long doLhemer (long pSeed) {
+		setSeed(pSeed);
+		long randomNumber = (MULTIPLYNUMBER*pSeed) + ADDNUMBER % MAXNUMBER;
+		return randomNumber;
+	}
+	
+	
+	
+	
+}

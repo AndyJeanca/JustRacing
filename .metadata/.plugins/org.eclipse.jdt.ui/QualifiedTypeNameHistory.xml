@@ -11,10 +11,18 @@
 <fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="com.example.justracing.R.id"/>
 <fullyQualifiedTypeName name="com.example.justracing.Main"/>
-<fullyQualifiedTypeName name="com.example.GeneticAlgorithm.Weapon"/>
 <fullyQualifiedTypeName name="com.example.ObjectOnTrack.ObjectOnTrack"/>
 <fullyQualifiedTypeName name="android.media.Image"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="com.example.GeneticAlgorithm.Weapon"/>
+<fullyQualifiedTypeName name="com.example.ObjectOnTrack.Enemy"/>
+<fullyQualifiedTypeName name="com.example.justracing.BillBoard"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="com.example.justracing.Lehmer"/>
+<fullyQualifiedTypeName name="com.example.justracing.Graph"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.example.justracing.ActualTrackSector"/>
 </qualifiedTypeNameHistroy>

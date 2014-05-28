@@ -20,7 +20,7 @@ public class PrintNewWeapon extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		
 		Intent intent = getIntent();
-		String coverFields = intent.getStringExtra(Main.EXTRA_MESSAGE);
+		//String coverFields = intent.getStringExtra(Main.EXTRA_MESSAGE);
 		
 		
 		int lastColor = intent.getIntExtra(Main.EXTRA_COLOR,0);
