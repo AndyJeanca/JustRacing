@@ -4,14 +4,14 @@ public class Lehmer {
 	// X=(ax + c)%m
 	private long MAXNUMBER; 				// m
 	private final long MULTIPLYNUMBER; 		// a
-	private final long ADDNUMBER;			// C
+	private final long ADDNUMBER;			// c
 	private long seed; 						// x
 	
 	public Lehmer () {
-		setMaxNumber(2^60);
+		MAXNUMBER = 2^60;
 		MULTIPLYNUMBER = 600;
 		ADDNUMBER = 600;
-		setSeed(0);
+		seed = 0;
 	}
 
 	public long getMaxNumber() {
@@ -40,8 +40,8 @@ public class Lehmer {
 	}
 	
 	public long doLhemer (long pSeed) {
-		setSeed(pSeed);
-		long randomNumber = (MULTIPLYNUMBER*pSeed) + ADDNUMBER % MAXNUMBER;
+		seed = pSeed;
+		long randomNumber = (MULTIPLYNUMBER*pSeed + ADDNUMBER) % MAXNUMBER;
 		return randomNumber;
 	}
 	

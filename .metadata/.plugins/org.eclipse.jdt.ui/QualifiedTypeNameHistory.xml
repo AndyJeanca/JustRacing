@@ -19,10 +19,10 @@
 <fullyQualifiedTypeName name="com.example.ObjectOnTrack.Enemy"/>
 <fullyQualifiedTypeName name="com.example.justracing.BillBoard"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.example.justracing.ActualTrackSector"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="com.example.justracing.Lehmer"/>
 <fullyQualifiedTypeName name="com.example.justracing.Graph"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.example.justracing.ActualTrackSector"/>
 </qualifiedTypeNameHistroy>

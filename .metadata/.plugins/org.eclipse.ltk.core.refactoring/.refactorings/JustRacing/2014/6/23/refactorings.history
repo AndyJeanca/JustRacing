@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;posInHash&apos; in &apos;com.example.justracing.Graph.initializeGraph(...)&apos; to &apos;newKey&apos;&#x0D;&#x0A;- Original project: &apos;JustRacing&apos;&#x0D;&#x0A;- Original element: &apos;com.example.justracing.Graph.initializeGraph(long).posInHash&apos;&#x0D;&#x0A;- Renamed element: &apos;posInHash&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;posInHash&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.example.justracing{Graph.java[Graph~initializeGraph~J@posInHash!566!589!570!578!I!0!false" name="newKey" references="true" stamp="1401581827788" version="1.0"/>
+</session>
